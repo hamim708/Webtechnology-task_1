@@ -1,31 +1,29 @@
-function showMembershipCard(event) {
-    event.preventDefault(); 
-    
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let age = Number(prompt("Enter your age"));
 
-    let plan = document.querySelector(
-        'input[name="membership"]:checked'
-    ).value;
+function showNumber(value){
+    document.getElementById("result").value += value;
+}
 
-    let category = age < 13 ? "Junior" : "Regular";
+function clearResult(){
+    document.getElementById("result").value = "";
+}
 
-    let fee = plan == "Basic" ? 500 :
-              plan == "Silver" ? 1000 : 1500;
+function deleteNumber(){
+    let result = document.getElementById("result");
+    result.value = result.value.slice(0,-1);
+}
 
-    let sections = ["Fiction", "Science", "History"];
+function calculate(){
+    let result = document.getElementById("result");
 
-    for (let section of sections) {
-        console.log(section);
+    try{
+        if(result.value == ""){
+            return;
+        }
+
+        let answer = Function("return " + result.value)();
+        result.value = answer;
     }
-
-    document.getElementById("card").innerHTML =
-        "Name: " + name + "<br>" +
-        "Email: " + email + "<br>" +
-        "Phone: " + phone + "<br>" +
-        "Category: " + category + "<br>" +
-        "Plan: " + plan + "<br>" +
-        "Fee: Tk " + fee;
+    catch{
+        result.value = "Error";
+    }
 }

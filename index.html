@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Library Membership Form</title>
+    <title>HTML Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Library Membership Form</h1>
-    <form id="membershipForm" onsubmit="showMembershipCard(event)">
-        <label>Name:</label>
-        <input type="text" id="name" required>
-        <br><br>
+<div class="calculator">
+    <h1>HTML Calculator</h1>
 
-        <label>Age:</label>
-        <input type="number" id="age" required>
-        <br><br>
+    <input type="text" id="result"
+           placeholder="45+12" readonly>
 
-        <label>Email:</label>
-        <input type="email" id="email" required>
-        <br><br>
+    <div class="buttons">
+        <button onclick="clearResult()">C</button>
+        <button onclick="deleteNumber()">DEL</button>
+        <button onclick="showNumber('*')">x</button>
+        <button onclick="showNumber('/')">/</button>
 
-        <label>Phone:</label>
-        <input type="text" id="phone" required>
-        <br><br>
+        <button onclick="showNumber('1')">1</button>
+        <button onclick="showNumber('2')">2</button>
+        <button onclick="showNumber('3')">3</button>
+        <button onclick="showNumber('+')">+</button>
 
-        <label>Choice:</label>
-        <input type="radio" name="membership" value="Basic" checked> Basic
-        <input type="radio" name="membership" value="Silver"> Silver
-        <input type="radio" name="membership" value="Gold"> Gold
-        <br><br>
+        <button onclick="showNumber('4')">4</button>
+        <button onclick="showNumber('5')">5</button>
+        <button onclick="showNumber('6')">6</button>
+        <button onclick="showNumber('-')">-</button>
 
-        <input type="submit" value="Submit">
-    </form>
+        <button onclick="showNumber('7')">7</button>
+        <button onclick="showNumber('8')">8</button>
+        <button onclick="showNumber('9')">9</button>
+        <button class="equal" onclick="calculate()">=</button>
 
-    <hr>
-    <div id="card"></div>
+        <button class="zero" onclick="showNumber('0')">0</button>
+        <button onclick="showNumber('.')">.</button>
+    </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
