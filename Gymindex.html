@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Gym Membership</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>City Gym Membership</h1>
+</header>
+
+<h2>Membership Fee</h2>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Fee (Taka)</th>
+    </tr>
+    <tr>
+        <td>Monthly Plan</td>
+        <td>1500</td>
+    </tr>
+    <tr>
+        <td>Quarterly Plan</td>
+        <td>4000</td>
+    </tr>
+    <tr>
+        <td>Yearly Plan</td>
+        <td>14000</td>
+    </tr>
+    <tr>
+        <td>Family Add-on (each)</td>
+        <td>500</td>
+    </tr>
+</table>
+
+<form onsubmit="return validateForm()" novalidate>
+
+    <fieldset>
+        <legend>Personal Details</legend>
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name">
+        <span id="nameError" class="error"></span>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age">
+        <span id="ageError" class="error"></span>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile">
+        <span id="mobileError" class="error"></span>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <span id="emailError" class="error"></span>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <span id="passwordError" class="error"></span>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+        <span id="confirmPasswordError" class="error"></span>
+    </fieldset>
+
+    <fieldset>
+        <legend>Membership Plan</legend>
+
+        <label for="plan">Plan:</label>
+        <select id="plan">
+            <option value="">Select Plan</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Quarterly">Quarterly</option>
+            <option value="Yearly">Yearly</option>
+        </select>
+        <span id="planError" class="error"></span>
+
+        <label for="date">Start Date:</label>
+        <input type="date" id="date">
+        <span id="dateError" class="error"></span>
+
+        <label>Workout Time:</label>
+        <div>
+            <label><input type="radio" name="time" value="Morning"> Morning</label>
+            <label><input type="radio" name="time" value="Afternoon"> Afternoon</label>
+            <label><input type="radio" name="time" value="Evening"> Evening</label>
+        </div>
+        <span id="timeError" class="error"></span>
+
+        <div class="trainer">
+            <div>
+                <label for="mainTrainer">Main Trainer:</label>
+                <select id="mainTrainer">
+                    <option value="">Select Trainer</option>
+                    <option>Rafi</option>
+                    <option>Mitu</option>
+                    <option>Sabbir</option>
+                    <option>Joya</option>
+                </select>
+                <span id="mainTrainerError" class="error"></span>
+            </div>
+
+            <div>
+                <label for="backupTrainer">Backup Trainer:</label>
+                <select id="backupTrainer">
+                    <option value="">Select Trainer</option>
+                    <option>Rafi</option>
+                    <option>Mitu</option>
+                    <option>Sabbir</option>
+                    <option>Joya</option>
+                </select>
+                <span id="backupTrainerError" class="error"></span>
+            </div>
+        </div>
+
+        <label for="addons">Family Add-ons:</label>
+        <input type="number" id="addons">
+        <span id="addonsError" class="error"></span>
+
+    </fieldset>
+
+    <p>
+        <input type="checkbox" id="agree" onchange="enableButton()">
+        <label for="agree">
+            I am medically fit to exercise and I accept the gym rules.
+        </label>
+    </p>
+
+    <button type="submit" id="joinBtn" disabled>Join Now</button>
+
+    <p id="finalMessage"></p>
+
+</form>
+
+</body>
+</html>
+```
